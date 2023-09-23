@@ -1,17 +1,15 @@
 doctype html 
 html 
-    head 
-        
-        title Innovision
-    body
-        form(action='action_page.php' method='post')
-            div(class='imgcontainer')  
-                
-            div(class='container')
-                label(for='uname')
-                     b Username
-                input(type='text' placeholder='Enter Username' name='uname' required='')
-                label(for='psw')
-                     b Password
-                input(type='password' placeholder='Enter Password' name='psw' required='')
-                button(type='submit') Login
+  head 
+    title Innovision
+  body
+    form#login-form(action='action_page.php' method='post')
+      label(for='uname')
+        b Username
+      input(type='text' placeholder='Enter Username' name='username' required='')
+      label(for='psw')
+        b Password
+      input(type='password' placeholder='Enter Password' name='password' required='')
+      button(type='submit') Login
+    footer
+      script(src="/js/login.js")
