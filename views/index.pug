@@ -1,1 +1,179 @@
 extends base.pug
+block head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='/css/index.css')
+  title GLOBAL EDUCATION HUB
+block content
+  section.specs
+    div(style='margin-top: 70px; text-align: center; color: white')
+      p(style='font-size: 30px') OUR MAJOR SPECIALITIES
+    .row
+      .column
+        .card
+          a.textj(href='/')
+            p.textj JOINT ENTRANCE EXAMINATION
+      .column
+        .card
+          a.textj(href='/')
+            p.textj NATIONAL ELIGIBILITY ENTRANCE TEST
+      .column
+        .card
+          a.textj(href='/')
+            p.textj FOUNDATION COURSES
+    .row
+      .column
+        .card
+          a.textj(href='/')
+            p.textj COMMON ADMISSION TEST
+      .column
+        .card
+          a.textj(href='/')
+            p.textj UNION PUBLIC SERVICE COMMISSION
+      .column
+        .card
+          a.textj(href='/')
+            p.textj GRADUATE APTITUDES TEST IN ENGINEERING
+  section
+    div(style='margin-top: 70px; text-align: center; color: white')
+      p(style='font-size: 30px') POPULAR COURSES
+    .pop
+      .pop1
+        p(style='font-size: 30px') Engineering
+        ul(style='margin-top: 25px; font-size: 25px')
+          li
+            p Two Year Integrated Classroom Course for
+            p Class XI to XII, JEE (Main &amp; Advanced)
+          li(style='margin-top: 9px')
+            p One Year Integrated Classroom Course for
+            p Class XII, JEE (Main &amp; Advanced)
+      .pop1
+        p(style='font-size: 30px') Medical
+        ul(style='margin-top: 25px; font-size: 25px')
+          li
+            p Two Year Integrated Classroom Course for
+            p Class XI to XII, NEET
+          li(style='margin-top: 9px')
+            p One Year Integrated Classroom Course for
+            p Class XII, NEET
+      .pop2
+        p(style='font-size: 30px') CAT
+        ul(style='margin-top: 25px; font-size: 25px')
+          li
+            p Long-term CAT course of duration 12-15 months
+          li(style='margin-top: 9px')
+            p CAT Crash courses of duration 2-3 months
+      .pop2
+        p(style='font-size: 30px') FOUNDATION COURSES
+        ul(style='margin-top: 25px; font-size: 25px')
+          li
+            p One-Year Integrated Classroom Course for
+            p Olympiads and Class IX
+          li(style='margin-top: 9px')
+            p One-Year Integrated Classroom Course for
+            p Olympiads, NTSE &amp; Class X
+  section
+    div(style='margin-top: 70px; text-align: center; color: white')
+      p(style='font-size: 30px')
+        | What makes Foundation us the smartest choice?
+    .advant
+      div(style='margin-top: 60px; text-align: center; color: white')
+        p(style='margin-bottom: 25px; font-size: 24px')
+          | ABOUT FOUNDATION COURSES
+      marquee.marq(behavior='alternative' scrollamount='2' onmouseover='this.stop();' onmouseout='this.start();' width='65%' direction='up' height='300px')
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 1. Building a Strong Academic Foundation: Foundation courses provide
+          | students with a solid grounding in essential subjects
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 2. Bridging Knowledge Gaps: Foundation courses are especially
+          | helpful for students who come from different educational
+          | backgrounds.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 3. Exploring Interests and Aptitudes: Foundation courses often cover
+          | a broad range of subjects, allowing students to explore different
+          | fields
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 4. Increased Confidence and Motivation: Foundation courses give
+          | students a sense of accomplishment and confidence as they acquire
+          | new knowledge and skills
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 5. Higher Success Rates: Institutes that implement foundation
+          | courses often observe higher success rates among students
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 6. Developing Critical Thinking and Problem-Solving Skills:
+          | Foundation courses emphasize critical thinking, analytical
+          | reasoning, and problem-solving skills.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 7. Enhancing Communication and Language Skills: Many foundation
+          | courses focus on improving students&apos; communication and language
+          | skills
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 8. Smooth Transition to Higher Education: Foundation courses provide
+          | a smoother transition from secondary education to higher education.
+    .advant
+      div(style='\
+      margin-top: 60px;\
+      text-align: center;\
+      color: white;\
+      ')
+        p(style='margin-bottom: 25px; font-size: 24px') OUR FORTE
+      marquee.marq(behavior='alternative' scrollamount='2' onmouseover='this.stop();' onmouseout='this.start();' width='65%' direction='up' height='300px')
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 1. Expert Guidance and Teaching: We have experienced faculty members
+          | who specialize in entrance exam preparation.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 2. Comprehensive Study Materials: We provide students with
+          | well-researched and comprehensive study materials that cover the
+          | entire syllabus of the entrance exams.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 3. Mock Tests and Practice Sessions: We conduct regular mock tests
+          | and practice sessions to familiarize students with the exam pattern,
+          | time management techniques, and the types of questions they can
+          | expect.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 4. Doubt Clearing Sessions: We offer doubt clearing sessions where
+          | students can seek clarification on difficult concepts or questions.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 5. Performance Analysis and Feedback: We provide students with
+          | feedback and performance analysis based on their mock tests and
+          | practice sessions.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 6. Time Management and Exam Strategy: We emphasize the importance of
+          | effective time management and exam strategy.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 7. Access to Additional Resources: We may provide students with
+          | access to additional resources such as online study portals,
+          | libraries, and digital learning platforms.
+        p(style='font-size: 17px; margin-bottom: 25px')
+          | 8. Past Year Question Papers and Analysis: We provide students with
+          | past year question papers of the entrance exams.
+block footer
+  .footer-distributed
+    div(style='margin-top: 80px; text-align: center; color: white')
+      p(style='font-size: 30px; margin-bottom: 80px')
+        | &quot;Unlock Your Potential. Embrace Knowledge. Empower Your Future.&quot;
+    .footer-left
+      .logo
+        p(style='font-size: 30px') GLOBAL EDUCATION
+        p(style='font-size: 30px; margin-bottom: 30px') HUB
+      p.footer-links
+        a(href='#') Home
+        |           &middot;
+        a(href='#') Blog
+        |           &middot;
+        a(href='#') About
+        |           &middot;
+        a(href='#') Faq
+        |           &middot;
+        a(href='#') Contact
+      p.footer-numbb Contact Number:99999111111
+      p.footer-company-name global education hub &copy; 2023
+    .footer-right
+      p Register yourself
+      form(action='#' method='post')
+        input(type='text' name='email' placeholder='Name')
+        input(type='text' name='email' placeholder='Email')
+        input(type='text' name='email' placeholder='Mobile NO.')
+        input(type='text' name='email' placeholder='Field Of Interest')
+        button Send

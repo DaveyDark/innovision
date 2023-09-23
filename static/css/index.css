@@ -1,0 +1,68 @@
+/* Reset some default styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Apply a background color */
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+}
+
+/* Header styling */
+header {
+	background-color: #007bff;
+	color: white;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/* Sport section styling */
+#sports {
+	padding: 40px 0;
+}
+
+.sport {
+	background-color: #fff;
+	padding: 20px;
+	margin-bottom: 20px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sport img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* About Us section styling */
+#about-us {
+	background-color: #fff;
+	padding: 40px 0;
+}
+
+/* Department Head section styling */
+#department {
+	background-color: #fff;
+	padding: 40px 0;
+}
+
+.head-info img {
+	max-width: 100px;
+	height: auto;
+}
+
+/* Footer styling */
+footer {
+	background-color: #333;
+	color: white;
+	text-align: center;
+	padding: 20px 0;
+}
