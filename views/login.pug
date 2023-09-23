@@ -1,17 +1,16 @@
-doctype html 
-html 
-  head 
-    title Innovision
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
-    link(rel="stylesheet", href="/css/login.css")
-  body
-    form#login-form(action='action_page.php' method='post')
-      label(for='uname')
-        b Username
-      input(type='text' placeholder='Enter Username' name='username' required='')
-      label(for='psw')
-        b Password
-      input(type='password' placeholder='Enter Password' name='password' required='')
-      button(type='submit') Login
-    footer
-      script(src="/js/login.js")
+extends base.pug
+block head 
+  title Innovision
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+  link(rel="stylesheet", href="/css/login.css")
+block content
+  form#login-form(action='action_page.php' method='post')
+    label(for='uname')
+      b Username
+    input(type='text' placeholder='Enter Username' name='username' required='')
+    label(for='psw')
+      b Password
+    input(type='password' placeholder='Enter Password' name='password' required='')
+    button(type='submit') Login
+block footer
+  script(src="/js/login.js")
