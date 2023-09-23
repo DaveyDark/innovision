@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/cricket", (req, res) => {
-  res.render("cricket");
+  res.render("event_details");
 });
 
 router.get("/swimming", (req, res) => {

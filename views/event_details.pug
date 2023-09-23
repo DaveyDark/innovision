@@ -1,0 +1,23 @@
+extends base.pug
+block head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Event Details
+  // Add Bootstrap CSS link
+  link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+block content
+  .container
+    .row
+      .col-md-12
+        .text-center.mt-5
+          h1.display-4 Event Name
+          p.lead Sport: Sport Name
+          p.lead Level: Inter College
+          p.lead Time: 9:00 AM - 5:00 PM
+          p.lead Date: October 15, 2023
+          p.lead Description: Join us for an exciting sports event...
+          p.lead Venue: XYZ Sports Complex, 123 Main Street, City
+block footer
+  script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
+  script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
