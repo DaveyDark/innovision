@@ -1,0 +1,94 @@
+.headerr {
+    background: rgb(195, 190, 190);
+    background: linear-gradient(0deg, rgba(0, 76, 137, 1) 50%, rgba(195, 190, 190, 1) 95%);
+    height: 1000px;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: 5% 5% 35% 32% 0% 20% 3%;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, .2);
+
+
+}
+
+.under {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    margin-top: 0px;
+    grid-column: 2/3;
+    font-size: 20px;
+
+}
+
+
+.main {
+    grid-column: 4/5;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 29px;
+    display: flex;
+    justify-content: space-around;
+    text-transform: capitalize;
+
+}
+
+.signup {
+    display: flex;
+    grid-column: 6/7;
+}
+
+button.log {
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px 25px;
+    font-weight: 700;
+    margin: 23px;
+    width: 150px;
+    padding: 10px 0;
+    box-shadow: 0 10 20px rgba(104, 85, 224, 0.2);
+    transition: 0.4s;
+}
+
+.log {
+    color: rgb(104, 85, 224);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(104, 85, 224, 1);
+}
+
+button.log:hover {
+    color: white;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+    background-color: rgba(104, 85, 224, 1);
+}
+
+button.reg {
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px 25px;
+    font-weight: 700;
+    margin: 23px;
+    width: 150px;
+    padding: 10px 0;
+    box-shadow: 0 10 20px rgba(104, 85, 224, 0.2);
+    transition: 0.4s;
+}
+
+.reg {
+    color: rgb(104, 85, 224);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(104, 85, 224, 1);
+}
+
+button.reg:hover {
+    color: white;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+    background-color: rgba(104, 85, 224, 1);
+}

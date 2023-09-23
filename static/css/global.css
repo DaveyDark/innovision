@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    line-height: normal;
+}
+
+
+
+.cricket1 {
+    margin: 0;
+}
+
+.cricket {
+    position: absolute;
+    height: 11.82%;
+    top: 40.43%;
+    left: calc(50% - 227px);
+    font-weight: 600;
+    display: inline-block;
+    width: 28.38rem;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cricket-parent {
+    position: relative;
+    width: 100%;
+    height: 64rem;
+    overflow: hidden;
+    background-image: url(./public/frame-1@3x.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    opacity: 0.5;
+    text-align: left;
+    font-size: 6.25rem;
+    color: #040404;
+    font-family: var(--font-poppins);
+}
