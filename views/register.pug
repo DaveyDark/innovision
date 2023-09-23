@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 doctype html
 html
     head
@@ -55,3 +56,27 @@ html
 
 
                 button(type="submit") Register
+=======
+html
+  head
+    
+  body
+    form(action='action_page.php', style='border:1px solid #ccc')
+      div(class='container')
+        h1 Sign Up
+        p Please fill in this form to create an account.
+        hr
+        label(for='email')
+          b Email
+        input(type='text', placeholder='Enter Email', name='email', required='')
+        label(for='psw')
+          b Password
+        input(type='password', placeholder='Enter Password', name='psw', required='')
+        label(for='psw-repeat')
+          b Repeat Password
+        input(type='password', placeholder='Repeat Password', name='psw-repeat', required='')
+        
+        div(class='clearfix')
+          button.cancelbtn(type='button') Cancel
+          button.signupbtn(type='submit') Sign Up
+>>>>>>> 01ea37435aa1625d78710ba7a7970437d8363a63
