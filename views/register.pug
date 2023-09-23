@@ -1,0 +1,57 @@
+doctype html
+html
+    head
+        title Sports Department Registration
+        link(rel="stylesheet", href="/css/register.css")
+        script(src="/javascript/register.js")
+    body
+        div(class='container')
+            h1 Register for Sports Department
+            form(action="/register", method="POST")
+                label(for="name") Name:
+                input(type="text", id="name", name="name", required)
+
+                label(for="email") College Email ID (@gndec.ac.in):
+                input(type="email", id="email", name="email", required pattern="^[a-zA-Z0-9._%+-]+@gndec.ac.in$")
+
+                label(for="username") CRN:
+                input(type="text", id="username", name="username", required)
+
+                label(for="urn") URN:
+                input(type="text", id="urn", name="urn", required)
+
+
+                label(for="password") Create Password:
+                input(type="password", id="password", name="password", required)
+
+                label(for="confirmPassword") Re-enter Password:
+                input(type="password", id="confirmPassword", name="confirmPassword", required)
+
+                label(for="branch") Branch:
+                    select(id="branch", name="branch", Multiple)
+                        option(value="IT") IT
+                        option(value="CSE") CSE
+                        option(value="ECE") ECE
+                        option(value="CE") CE
+                        option(value="ME") ME
+                        option(value="EE") EE
+                label(for="sports") Sports (Select Multiple):
+                    div
+                    label
+                        input(type="checkbox", name="sports", value="cricket")
+                        | Cricket
+                    label
+                        input(type="checkbox", name="sports", value="swimming")
+                        | Swimming pool
+                    label
+                        input(type="checkbox", name="sports", value="basketball")
+                        | Basketball
+                    label
+                        input(type="checkbox", name="sports", value="chess")
+                        | Chess
+                    label
+                        input(type="checkbox", name="sports", value="volleyball")
+                        | Volley Wall
+
+
+                button(type="submit") Register
