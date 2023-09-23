@@ -7,13 +7,15 @@ body {
 
 .cricket1 {
     margin: 0;
+    font-size: 30px;
+
 }
 
 .cricket {
     position: absolute;
     height: 11.82%;
-    top: 40.43%;
-    left: calc(50% - 227px);
+    top: 45%;
+    left: calc(60% - 227px);
     font-weight: 600;
     display: inline-block;
     width: 28.38rem;
@@ -25,11 +27,11 @@ body {
     width: 100%;
     height: 64rem;
     overflow: hidden;
-    background-image: url(./public/frame-1@3x.png);
+    background-image: url(/img/cricket.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    opacity: 0.5;
+
     text-align: left;
     font-size: 6.25rem;
     color: #040404;
