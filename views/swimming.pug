@@ -1,10 +1,12 @@
-
 extends sports_base.pug
-block maincontent
-  .container
-    .content
-      h1.title Swimming
-      p.description
-        Swimming is a popular aquatic sport involving competitive races using various strokes like freestyle, breaststroke, backstroke, and butterfly. It offers numerous health benefits, including full-body workouts with low impact on joints, making it accessible to all ages and fitness levels. Swimming promotes cardiovascular fitness, strength, and mental well-being. It also requires discipline and mental resilience due to rigorous training and technique refinement. Beyond competition, swimming offers a sense of freedom in natural settings. Its rich history dates back to ancient civilizations, and it is a prominent feature in the Olympics. Overall, swimming combines physical fitness, mental strength, and a deep connection to water.
-    .image
-      img(src='/img/swimming bg.jpg' alt='Chess Image')
+
+block style
+  | .page-header::before {
+  |   background-image: url('/img/swimming.jpg');
+  | }
+
+block sport_title
+  | Swimming
+
+block sport_desc
+  | Welcome to our swimming page, where skill and endurance dominate the pool. Dive into the world of swimming, where every stroke and turn can make the difference between victory and defeat. Our coaching team is dedicated to nurturing swimmers of all levels, from beginners learning to float to elite athletes refining their technique. We emphasize perfecting your swimming strokes, improving your endurance, and enhancing your race strategy. Join us in our swimming competitions, from local meets to international championships, and witness the sheer determination of our swimmers as they chase their goals in the water.

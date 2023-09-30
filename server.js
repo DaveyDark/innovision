@@ -25,10 +25,10 @@ app.get("/", (req, res) => {
   res.render("index", {'session': req.session});
 });
 app.get("/login", (req, res) => {
-  res.render("login");
+  res.render("login", {'session': req.session});
 });
 app.get("/register", (req, res) => {
-  res.render("register");
+  res.render("register", {'session': req.session});
 });
 
 app.listen(5000);

@@ -18,28 +18,28 @@ html
         .collapse.navbar-collapse#navbarCont
           ul.navbar-nav.ml-auto
             li.nav-item
-              a.nav-link(href='#') Home
+              a.nav-link(href='/') Home
             li.nav-item.dropdown
               a#sportsDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
                 | Sports
               .dropdown-menu(aria-labelledby='sportsDropdown')
-                a.dropdown-item(href='/sports/chess') Chess
-                a.dropdown-item(href='/sports/cricket') Cricket
-                a.dropdown-item(href='/sports/swimming') Swimming
                 a.dropdown-item(href='/sports/badminton') Badminton
                 a.dropdown-item(href='/sports/basketball') Basketball
+                a.dropdown-item(href='/sports/chess') Chess
+                a.dropdown-item(href='/sports/cricket') Cricket
+                a.dropdown-item(href='/sports/cycling') Cycling
                 a.dropdown-item(href='/sports/football') Football
                 a.dropdown-item(href='/sports/hockey') Hockey
-                a.dropdown-item(href='/sports/lawn-tennis') Lawn Tennis
-                a.dropdown-item(href='/sports/cycling') Cycling
-                a.dropdown-item(href='/sports/vollyball') Vollyball
                 a.dropdown-item(href='/sports/kabaddi') Kabaddi
+                a.dropdown-item(href='/sports/lawn-tennis') Lawn Tennis
+                a.dropdown-item(href='/sports/swimming') Swimming
+                a.dropdown-item(href='/sports/vollyball') Vollyball
             if session.user_id
               li.nav-item
                 a.nav-link(href='#') Logout
             else
               li.nav-item
-                a.nav-link(href='#') Sign In
+                a.nav-link(href='/login') Sign In
     block content
   footer
     block footer

@@ -37,7 +37,7 @@ router.get("/cycling", (req, res) => {
   res.render("cycling", {'session': req.session});
 });
 
-router.get("/volleyball", (req, res) => {
+router.get("/vollyball", (req, res) => {
   res.render("vollyball", {'session': req.session});
 });
 

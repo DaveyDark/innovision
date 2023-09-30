@@ -1,11 +1,12 @@
-doctype html
-html
-    head
-        meta(charset='utf-8')
-        meta(name='viewport', content='initial-scale=1, width=device-width')
-        link(rel='stylesheet', href='/css/global.css')
-        link(rel='stylesheet', href='https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap')
-    body
-        div(class='cricket-parent')
-        div(class='cricket')
-         p(class='cricket1') CRICKET.
+extends sports_base.pug
+
+block style
+  | .page-header::before {
+  |   background-image: url('/img/cricket2.jpg');
+  | }
+
+block sport_title
+  | Cricket
+
+block sport_desc
+  | Welcome to our cricket page, where teamwork and precision take center stage. Immerse yourself in the thrilling world of cricket, where every ball bowled and every shot played can change the course of the game. Our coaching team is dedicated to developing cricket enthusiasts of all backgrounds, whether you're a novice or a seasoned pro. We emphasize refining your batting, bowling, and fielding skills, as well as enhancing your strategic thinking. Join us in our cricket tournaments, both local and international, and witness the spectacular performances of our talented players on the field.
