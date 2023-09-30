@@ -4,13 +4,25 @@ block head
   link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
   link(rel="stylesheet", href="/css/login.css")
 block content
-  form#login-form(action='action_page.php' method='post')
-    label(for='uname')
-      b Username
-    input(type='text' placeholder='Enter Username' name='username' required='')
-    label(for='psw')
-      b Password
-    input(type='password' placeholder='Enter Password' name='password' required='')
-    button(type='submit') Login
+  main.container-fluid.vh-100.d-flex.align-items-center
+    .container.col-xl-10.col-xxl-8.px-4.py-5
+      .row.align-items-center.g-lg-5.py-5
+        .col-lg-7.text-center.text-lg-start
+          h1.display-4.fw-bold.lh-1.mb-3 GNDEC Sports
+          p.col-lg-12.fs-4
+            | Explore the world of athleticism and teamwork at Guru Nanak Dev Engineering College. Register now to stay updated on our exciting sports events and join the game-changing community of student athletes.
+        .col-md-10.mx-auto.col-lg-5
+          form.p-4.p-md-5.border.rounded-3.bg-light#loginForm
+            .form-floating.mb-3
+              input#floatingInput.form-control(type='email' placeholder='name@gndec.ac.in')
+              label(for='floatingInput') College Email address
+            .form-floating.mb-3
+              input#floatingPassword.form-control(type='password' placeholder='Password')
+              label(for='floatingPassword') Password
+            button.w-100.btn.btn-lg.btn-primary(type='submit') Sign In
+            hr.my-4
+            small.fs-6.text-muted 
+              | Not registered yet? 
+              a(href="/register") click here to sign up
 block footer
   script(src="/js/login.js")
