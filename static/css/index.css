@@ -6,10 +6,6 @@ body {
   transition: background-color 0.6s ease;
 }
 
-.navbar-nav {
-  margin-left: auto;
-}
-
 .cover-container {
   height: inherit;
   max-width: 42em;
@@ -61,11 +57,13 @@ body {
 }
 
 .card-img-top {
-  height: 20rem;
+  height: 15rem;
+  object-fit: cover;
 }
 
 .card {
   position: relative;
+  cursor: pointer;
 }
 
 .card img {
@@ -90,5 +88,6 @@ body {
 }
 
 .card:hover .card-text-overlay {
-  display: block; /* Show the text on hover */
+  display: block;
 }
+

@@ -3,7 +3,11 @@
   --bs-secondary: #907bff; /* Your custom secondary color */
 }
 
-
 .nav-link {
   color: #fff !important;
 }
+
+.navbar-nav {
+  margin-left: auto;
+}
+

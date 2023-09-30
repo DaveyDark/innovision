@@ -1,13 +1,21 @@
 extends base.pug
+
 block head
-  meta(charset='UTF-8')
-  meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Chess
-  link(rel='stylesheet' href='/css/chess.css')
+  link(rel='stylesheet' href='/css/sports_base.css')
+  link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css")
+  script(src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js")
+  style
+    block style
 block content
-  block maincontent
-  .events
-    .event-container
-      h2.event-title Upcoming Event
-      p.event-date Date: October 15, 2023
-      p.event-description Join us for an exciting tournament...
+  .page-header.d-flex.align-items-center.justify-content-center(style="background-image: url('/img/chess description.png')")
+    .overlay
+    .col-md-5.p-lg-5.mx-auto.my-5
+      h1.display-4.text-light.fw-normal
+        block sport_title
+      p.lead.text-light.fw-normal
+        block sport_desc
+  include events_view.pug
+
+block footer
+  script(src="/js/events.js")

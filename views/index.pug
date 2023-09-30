@@ -7,6 +7,7 @@ block head
   link(rel='stylesheet' href='/css/index.css')
   script(src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js")
   link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css")
+  script(src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js")
   title GNDEC Sports
 block content
   .banner-container.container-fluid.d-flex.h-100.text-center.text-white
@@ -31,108 +32,23 @@ block content
   .album.py-5.bg-dark
     .container
       .row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
-        .col
-          .card
-            img.card-img-top(src="img/chess-playing-hand.jpeg")
-            .card-text-overlay Chess
-        .col
-          .card
-            img.card-img-top(src="img/cricket.jpg")
-            .card-text-overlay Cricket
-        .col
-          .card
-            img.card-img-top(src="img/swimming bg.jpg")
-            .card-text-overlay Swimming
-        .col
-          .card
-            img.card-img-top(src="img/vollyball bg.jpg")
-            .card-text-overlay Vollyball
-        .col
-          .card
-            img.card-img-top(src="img/football bg.jpeg")
-            .card-text-overlay Football
-        .col
-          .card
-            img.card-img-top(src="img/badminton bg.jpg")
-            .card-text-overlay Badminton
-  section.py-5.container
-    .row
-      .col.mr-auto
-        h1.fw-light Events
-  .album.py-5.bg-dark
-    .container
-      .swiper
-        .swiper-wrapper
-          .swiper-slide
-            .card.shadow-sm
-              .card-header Football
-              .card-body
-                .card-title Inter College Trials
-                .card-text
-                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                .list-group.list-group-flush
-                  .list-group-item Date: 27/09/2023
-                  .list-group-item Time: 10:00AM
-                  .list-group-item Venue: Football Ground
-          .swiper-slide
-            .card.shadow-sm
-              .card-header Fooball
-              .card-body
-                .card-title Inter College Trials
-                .card-text
-                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                .list-group.list-group-flush
-                  .list-group-item Date: 27/09/2023
-                  .list-group-item Time: 10:00AM
-                  .list-group-item Venue: Football Ground
-          .swiper-slide
-            .card.shadow-sm
-              .card-header ootball
-              .card-body
-                .card-title Inter College Trials
-                .card-text
-                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                .list-group.list-group-flush
-                  .list-group-item Date: 27/09/2023
-                  .list-group-item Time: 10:00AM
-                  .list-group-item Venue: Football Ground
-          .swiper-slide
-            .card.shadow-sm
-              .card-header Fotball
-              .card-body
-                .card-title Inter College Trials
-                .card-text
-                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                .list-group.list-group-flush
-                  .list-group-item Date: 27/09/2023
-                  .list-group-item Time: 10:00AM
-                  .list-group-item Venue: Football Ground
-          .swiper-slide
-            .card.shadow-sm
-              .card-header Footbal
-              .card-body
-                .card-title Inter College Trials
-                .card-text
-                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                .list-group.list-group-flush
-                  .list-group-item Date: 27/09/2023
-                  .list-group-item Time: 10:00AM
-                  .list-group-item Venue: Football Ground
-          .swiper-slide
-            .card.shadow-sm
-              .card-header Footall
-              .card-body
-                .card-title Inter College Trials
-                .card-text
-                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                .list-group.list-group-flush
-                  .list-group-item Date: 27/09/2023
-                  .list-group-item Time: 10:00AM
-                  .list-group-item Venue: Football Ground
-        .swiper-pagination 
-        .swiper-button-prev
-        .swiper-button-next
-        .swiper-scrollbar
+        mixin sport-card(url,img,title)
+          .col
+            .card(onclick=`window.location = '/sports/${url}'`)
+              img.card-img-top(src=`/img/${img}`)
+              .card-text-overlay= title
+        +sport-card('chess','chess-playing-hand.jpeg', 'Chess')
+        +sport-card('cricket','cricket.jpg', 'Cricket')
+        +sport-card('swimming','swimming bg.jpg', 'Swimming')
+        +sport-card('vollyball','vollyball bg.jpg', 'Vollyball')
+        +sport-card('football','football bg.jpeg', 'Football')
+        +sport-card('badminton','badminton bg.jpg', 'Badminton')
+        +sport-card('basketball','basketball.jpg', 'Basketball')
+        +sport-card('cycling','cycling.jpg', 'Cycling')
+        +sport-card('hockey','hockey.jpg', 'Hockey')
+        +sport-card('kabaddi','kabaddi.jpg', 'Kabaddi')
+        +sport-card('tennis','tennis.jpeg', 'Tennis')
+  include events_view.pug
 block footer
-  script(src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js")
   script(src="/js/index.js")
+  script(src="/js/events.js")

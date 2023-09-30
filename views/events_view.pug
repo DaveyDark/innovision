@@ -1,0 +1,25 @@
+section.py-5.container
+  .row
+    .col.mr-auto
+      h1.fw-light Events
+.album.py-5.bg-dark
+  .container
+    .swiper
+      .swiper-wrapper
+        mixin event_slide
+          .swiper-slide
+            .card.shadow-sm
+              .card-header Football
+              .card-body
+                .card-title Inter College Trials
+                .card-text
+                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .list-group.list-group-flush
+                  .list-group-item Date: 27/09/2023
+                  .list-group-item Time: 10:00AM
+                  .list-group-item Venue: Football Ground
+        - for (let i = 0; i < 10; i++)
+          +event_slide
+      .swiper-pagination 
+      .swiper-button-prev
+      .swiper-button-next

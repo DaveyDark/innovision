@@ -5,28 +5,17 @@ var typed = new Typed('#typed', {
   loop: true,
 });
 
+function toggleNavbar() {
+  const shouldAddClass = $(this).scrollTop() > 0.5*window.innerHeight;
+  $('.navbar').toggleClass('bg-dark', shouldAddClass);
+  $('.navbar').toggleClass('bg-transparent', !shouldAddClass);
+}
+
 $(document).ready(() => {
+  toggleNavbar()
   $(window).scroll(() => {
-    const shouldAddClass = $(this).scrollTop() > 0.5*window.innerHeight;
-    $('.navbar').toggleClass('bg-dark', shouldAddClass);
-    $('.navbar').toggleClass('bg-transparent', !shouldAddClass);
+    toggleNavbar()
   });
 });
 
 
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  slidesPerView: 3,
-  spaceBetween: 20,
-  loop: true,
-  pagination: {
-    el: '.swiper-pagination',
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  autoplay: {
-    delay: 2000,
-  },
-});

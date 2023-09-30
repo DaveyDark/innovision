@@ -10,8 +10,6 @@ app = express();
 app.use(express.json());
 app.use(express.static("static"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("/api", api);
-app.use("/sports", sports);
 app.use(
   session({
     secret: "finance",
@@ -20,6 +18,8 @@ app.use(
   })
 );
 app.set("view engine", "pug");
+app.use("/sports", sports);
+app.use("/api", api);
 
 app.get("/", (req, res) => {
   res.render("index", {'session': req.session});

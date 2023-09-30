@@ -1,21 +1,12 @@
 extends sports_base.pug
-block maincontent
-  .container
-    .content
-      h1.title Chess
-      p.description
-        | Chess is a classic two-player strategy board game that has captivated minds and hearts for centuries.
-        | Played on an 8x8 grid, the game features a variety of distinct pieces, each with its unique abilities
-        | and movements. The ultimate goal of chess is simple: checkmate your opponent&apos;s king, a state where the
-        | king is under attack and cannot escape capture.
-        | Chess is a game of deep strategy, requiring players to plan their moves several steps ahead while
-        | anticipating their opponent&apos;s responses. It encourages critical thinking, tactical prowess, and the
-        | development of a keen sense of foresight. Chess is often regarded as the &quot;game of kings&quot; due to its
-        | historical prominence and its reputation for fostering intellectual growth.
-        | The game&apos;s enduring appeal lies in its accessibility to players of all ages and skill levels, from
-        | beginners learning the basics of movement to grandmasters mastering complex openings, middlegame
-        | tactics, and endgame strategies. Chess has also adapted to the digital age, with online platforms and
-        | computer programs allowing players from around the world to compete, learn, and enjoy this timeless
-        | pastime
-    .image
-      img(src='/img/chess-playing-hand.jpeg' alt='Chess Image')
+
+block style
+  | .page-header::before {
+  |   background-image: url('/img/chess description.png');
+  | }
+
+block sport_title
+  | Chess
+
+block sport_desc
+  | Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit ex esse exercitation amet. Nisi anim cupidatat excepteur officia. Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate voluptate dolor minim nulla est proident. Nostrud officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex occaecat reprehenderit commodo officia dolor Lorem duis laboris cupidatat officia voluptate. Culpa proident adipisicing id nulla nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo ex non excepteur duis sunt velit enim. Voluptate laboris sint cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
