@@ -14,7 +14,7 @@
   "description": "Sports Management System",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",

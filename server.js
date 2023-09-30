@@ -22,7 +22,7 @@ app.use(
 app.set("view engine", "pug");
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {'session': req.session});
 });
 app.get("/login", (req, res) => {
   res.render("login");

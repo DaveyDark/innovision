@@ -1,71 +1,24 @@
 extends base.pug
+
 block head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/css/index.css')
-  title GLOBAL EDUCATION HUB
+  title GNDEC Sports
 block content
-  section.specs
-    div(style='margin-top: 70px; text-align: center; color: white')
-      p(style='font-size: 30px') OUR MAJOR SPORTS
-    .row
-      .column
-        .card
-          a.textj(href='/')
-            p.textj SWIMMING
-      .column
-        .card
-          a.textj(href='/')
-            p.textj FOOTBALL
-      .column
-        .card
-          a.textj(href='/')
-            p.textj CHESS
-    .row
-      .column
-        .card
-          a.textj(href='/')
-            p.textj CRICKET
-      .column
-        .card
-          a.textj(href='/')
-            p.textj BASKETBALL
-      
-  section
-    div(style='margin-top: 70px; text-align: center; color: white')
-      p(style='font-size: 30px') ABOUT US
-    .pop Established in 1956, our Sports Department embodies Guru Nanak Dev Ji's values and promotes diversity. We're a leading force, inspiring a vibrant sports culture among staff and students. Our mission: fostering lifelong health through physical education and sports.We empower students to face an ever-changing world confidently and responsibly. Our physical education programs help them discover, develop, and test their skills to make a positive impact.Our inclusive environment welcomes all students, regardless of gender or cultural background, offering ample opportunities to participate. We prepare competitive teams for inter-college and inter-varsity competitions and organize various tournaments throughout the year. We don't just focus on the game; we promote wellness in six dimensions: physical, emotional, social, spiritual, intellectual, and environmental. Our goal is to make intramural sports an integral part of campus life, fostering teamwork, leadership, and a lifelong commitment to well-being.
-    
-    .pop1
-
-    
-block footer
-  .footer-distributed
-    div(style='margin-top: 80px; text-align: center; color: white')
-      p(style='font-size: 30px; margin-bottom: 80px')
-        | &quot;Unlock Your Potential. Embrace Knowledge. Empower Your Future.&quot;
-    .footer-left
-      .logo
-        p(style='font-size: 30px') GLOBAL EDUCATION
-        p(style='font-size: 30px; margin-bottom: 30px') HUB
-      p.footer-links
-        a(href='#') Home
-        |           &middot;
-        a(href='#') Blog
-        |           &middot;
-        a(href='#') About
-        |           &middot;
-        a(href='#') Faq
-        |           &middot;
-        a(href='#') Contact
-      p.footer-numbb Contact Number:99999111111
-      p.footer-company-name global education hub &copy; 2023
-    .footer-right
-      p Register yourself
-      form(action='#' method='post')
-        input(type='text' name='email' placeholder='Name')
-        input(type='text' name='email' placeholder='Email')
-        input(type='text' name='email' placeholder='Mobile NO.')
-        input(type='text' name='email' placeholder='Field Of Interest')
-        button Send
+  .banner-container.container-fluid.d-flex.h-100.text-center.text-white.bg-dark
+    .cover-container.d-flex.w-100.h-100.p-3.mx-auto.flex-column
+      main.px-3
+        h1 Cover your page.
+        p.lead
+          | Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
+        p.lead
+          a.btn.btn-lg.btn-secondary.fw-bold.border-white.bg-white(href='#') Learn more
+      footer.mt-auto.text-white-50
+        p
+          | Cover template for 
+          a.text-white(href='https://getbootstrap.com/') Bootstrap
+          | , by 
+          a.text-white(href='https://twitter.com/mdo') @mdo
+          | .

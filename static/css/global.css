@@ -1,39 +1,4 @@
-body {
-    margin: 0;
-    line-height: normal;
-}
-
-
-
-.cricket1 {
-    margin: 0;
-    font-size: 30px;
-
-}
-
-.cricket {
-    position: absolute;
-    height: 11.82%;
-    top: 45%;
-    left: calc(60% - 227px);
-    font-weight: 600;
-    display: inline-block;
-    width: 28.38rem;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.cricket-parent {
-    position: relative;
-    width: 100%;
-    height: 64rem;
-    overflow: hidden;
-    background-image: url(/img/cricket.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: top;
-
-    text-align: left;
-    font-size: 6.25rem;
-    color: #040404;
-    font-family: var(--font-poppins);
+:root {
+  --bs-primary: #ff5733; /* Your custom primary color */
+  --bs-secondary: #907bff; /* Your custom secondary color */
 }
