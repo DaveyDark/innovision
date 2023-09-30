@@ -1,12 +1,5 @@
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-}
-
 body {
-  max-height: 100vh;
+  height: 100vh;
 }
 
 .cover-container {
@@ -16,5 +9,25 @@ body {
 
 .banner-container {
   height: 100%;
-  background: red;
+  background-image: 
+    linear-gradient(
+          rgba(0, 0, 0, 0.6), 
+          rgba(0, 0, 0, 0.4), 
+          rgba(0, 0, 0, 0.2), 
+          rgba(0, 0, 0, 0.4), 
+          rgba(0, 0, 0, 0.8)
+        ),
+    url('/img/sports.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.typed-text {
+  font-size: 56pt;
+}
+
+#typed {
+  color: yellow;
 }
