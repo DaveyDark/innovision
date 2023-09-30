@@ -60,6 +60,35 @@ body {
   border-radius: 5px;
 }
 
-.card-img {
-  border-radius: 10px;
+.card-img-top {
+  height: 20rem;
+}
+
+.card {
+  position: relative;
+}
+
+.card img {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out; 
+}
+
+.card:hover img {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.card-text-overlay {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card:hover .card-text-overlay {
+  display: block; /* Show the text on hover */
 }

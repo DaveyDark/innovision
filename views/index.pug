@@ -6,6 +6,7 @@ block head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='/css/index.css')
   script(src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js")
+  link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css")
   title GNDEC Sports
 block content
   .banner-container.container-fluid.d-flex.h-100.text-center.text-white
@@ -23,12 +24,115 @@ block content
         p.lead
           | Established in 1956, our Sports Department embodies Guru Nanak Dev Ji's values and promotes a diverse, inclusive sports culture among students and staff. We inspire lifelong health by engaging our community in physical education and sports activities. Our mission is to prepare students for an ever-changing world, fostering confidence and responsibility for global betterment.
           | Quickly design and customize responsive mobile-first sites with Bootstrap, the world&rsquo;s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.
+  section.py-5.text-center.container-fluid.bg-dark
+    .row
+      .col.mx-auto
+        h1.text-light.fw-light Sports Offered
   .album.py-5.bg-dark
     .container
       .row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
         .col
           .card
-            img.card-img(src="img/chess bg.png")
-            .card-text-overlay Hover Text
+            img.card-img-top(src="img/chess-playing-hand.jpeg")
+            .card-text-overlay Chess
+        .col
+          .card
+            img.card-img-top(src="img/cricket.jpg")
+            .card-text-overlay Cricket
+        .col
+          .card
+            img.card-img-top(src="img/swimming bg.jpg")
+            .card-text-overlay Swimming
+        .col
+          .card
+            img.card-img-top(src="img/vollyball bg.jpg")
+            .card-text-overlay Vollyball
+        .col
+          .card
+            img.card-img-top(src="img/football bg.jpeg")
+            .card-text-overlay Football
+        .col
+          .card
+            img.card-img-top(src="img/badminton bg.jpg")
+            .card-text-overlay Badminton
+  section.py-5.container
+    .row
+      .col.mr-auto
+        h1.fw-light Events
+  .album.py-5.bg-dark
+    .container
+      .swiper
+        .swiper-wrapper
+          .swiper-slide
+            .card.shadow-sm
+              .card-header Football
+              .card-body
+                .card-title Inter College Trials
+                .card-text
+                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .list-group.list-group-flush
+                  .list-group-item Date: 27/09/2023
+                  .list-group-item Time: 10:00AM
+                  .list-group-item Venue: Football Ground
+          .swiper-slide
+            .card.shadow-sm
+              .card-header Fooball
+              .card-body
+                .card-title Inter College Trials
+                .card-text
+                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .list-group.list-group-flush
+                  .list-group-item Date: 27/09/2023
+                  .list-group-item Time: 10:00AM
+                  .list-group-item Venue: Football Ground
+          .swiper-slide
+            .card.shadow-sm
+              .card-header ootball
+              .card-body
+                .card-title Inter College Trials
+                .card-text
+                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .list-group.list-group-flush
+                  .list-group-item Date: 27/09/2023
+                  .list-group-item Time: 10:00AM
+                  .list-group-item Venue: Football Ground
+          .swiper-slide
+            .card.shadow-sm
+              .card-header Fotball
+              .card-body
+                .card-title Inter College Trials
+                .card-text
+                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .list-group.list-group-flush
+                  .list-group-item Date: 27/09/2023
+                  .list-group-item Time: 10:00AM
+                  .list-group-item Venue: Football Ground
+          .swiper-slide
+            .card.shadow-sm
+              .card-header Footbal
+              .card-body
+                .card-title Inter College Trials
+                .card-text
+                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .list-group.list-group-flush
+                  .list-group-item Date: 27/09/2023
+                  .list-group-item Time: 10:00AM
+                  .list-group-item Venue: Football Ground
+          .swiper-slide
+            .card.shadow-sm
+              .card-header Footall
+              .card-body
+                .card-title Inter College Trials
+                .card-text
+                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                .list-group.list-group-flush
+                  .list-group-item Date: 27/09/2023
+                  .list-group-item Time: 10:00AM
+                  .list-group-item Venue: Football Ground
+        .swiper-pagination 
+        .swiper-button-prev
+        .swiper-button-next
+        .swiper-scrollbar
 block footer
+  script(src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js")
   script(src="/js/index.js")
