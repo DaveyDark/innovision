@@ -2,3 +2,8 @@
   --bs-primary: #ff5733; /* Your custom primary color */
   --bs-secondary: #907bff; /* Your custom secondary color */
 }
+
+
+.nav-link {
+  color: #fff !important;
+}
