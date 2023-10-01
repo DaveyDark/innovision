@@ -6,20 +6,20 @@ section.py-5.container
   .container.events-row
     .swiper#swiper-container
       .swiper-wrapper
-        mixin event_slide
+        mixin event_slide(event)
           .swiper-slide
             .card.shadow-sm
-              .card-header Football
+              .card-header= event.sport
               .card-body
-                .card-title Inter College Trials
+                .card-title= event.name
                 .card-text
-                  | This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                  =event.description
                 .list-group.list-group-flush
-                  .list-group-item Date: 27/09/2023
-                  .list-group-item Time: 10:00AM
-                  .list-group-item Venue: Football Ground
-        - for (let i = 0; i < 10; i++)
-          +event_slide
+                  .list-group-item Date: #{event.date}
+                  .list-group-item Time: #{event.time}
+                  .list-group-item Venue: #{event.venue}
+        for event in events
+          +event_slide(event)
       .swiper-pagination#swiper-pagination
       .swiper-button-prev#swiper-button-prev
       .swiper-button-next#swiper-button-next

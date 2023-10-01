@@ -19,10 +19,16 @@ app.use(
 );
 app.set("view engine", "pug");
 app.use("/sports", sports);
-app.use("/api", api);
+app.use("/api", api.router);
 
 app.get("/", (req, res) => {
-  res.render("index", {'session': req.session});
+  api.getEvents((err,rows) => {
+    if(err) {
+      res.render("index", {'session': req.session, 'events': {}});
+    } else {
+      res.render("index", {'session': req.session, 'events': rows});
+    }
+  })
 });
 app.get("/login", (req, res) => {
   res.render("login", {'session': req.session});

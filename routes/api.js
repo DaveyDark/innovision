@@ -108,9 +108,50 @@ router.post("/register", (req, res) => {
   })
 })
 
+function getEvents(callback) {
+  db.all('SELECT * FROM events LIMIT 10', (err, rows) => {
+    if (err) {
+      console.log(`Error retrieving rows: ${err}`);
+      callback(err, null);
+    } else {
+      callback(null, rows);
+    }
+  });
+}
+
+function getEventsFor(sport,callback) {
+  db.all('SELECT * FROM events WHERE sport=? LIMIT 10', [sport], (err, rows) => {
+    if (err) {
+      console.log(`Error retrieving rows: ${err}`);
+      callback(err, null);
+    } else {
+      callback(null, rows);
+    }
+  });
+}
 
 router.get('/events', (req,res) => {
-  res.sendStatus(200)
+  getEvents((err,rows) => {
+    if(err) {
+      return res.sendStatus(500)
+    } else {
+      return res.status(200).json(rows)
+    }
+  })
 })
 
-module.exports = router
+router.get('/events/:sport', (req,res) => {
+  getEventsFor(req.params.sport,(err,rows) => {
+    if(err) {
+      return res.sendStatus(500)
+    } else {
+      return res.status(200).json(rows)
+    }
+  })
+})
+
+module.exports = {
+  router,
+  getEvents,
+  getEventsFor,
+}
