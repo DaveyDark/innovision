@@ -3,59 +3,102 @@ block head
   title Sports Department Registration
   link(rel="stylesheet", href="/css/register.css")
 block content
-  div(class='container')
-    h1 Register for Sports Department
-    form#register-form(action="/register", method="POST")
-      label(for="name") Name:
-      input(type="text", id="name", name="name", required)
-
-      label(for="email") College Email ID (@gndec.ac.in):
-      input(type="email", id="email", name="email")
-
-      label(for="username") CRN:
-      input(type="text", id="username", name="username", required)
-
-      label(for="urn") URN:
-      input(type="text", id="urn", name="urn", required)
-
-
-      label(for="password") Create Password:
-      input(type="password", id="password", name="password", required)
-
-      label(for="confirmPassword") Re-enter Password:
-      input(type="password", id="confirmPassword", name="confirmPassword", required)
-
-      label(for="branch") Branch:
-      select(id="branch", name="branch", Multiple)
-        option(value="IT") IT
-        option(value="CSE") CSE
-        option(value="ECE") ECE
-        option(value="CE") CE
-        option(value="ME") ME
-        option(value="EE") EE
-      label(for="year") Year:
-      select(id="year", name="year", Multiple)
-        option(value="1") 1
-        option(value="2") 2
-        option(value="3") 3
-        option(value="4") 4
-      label(for="sports") Sports (Select Multiple):
-        div
-        label
-          input(type="checkbox", name="sports", value="cricket")
-          | Cricket
-        label
-          input(type="checkbox", name="sports", value="swimming")
-          | Swimming pool
-        label
-          input(type="checkbox", name="sports", value="basketball")
-          | Basketball
-        label
-          input(type="checkbox", name="sports", value="chess")
-          | Chess
-        label
-          input(type="checkbox", name="sports", value="volleyball")
-          | Volley Wall
-      button(type="submit") Register
+  .container.mb-5
+    .py-5.text-center
+      img.d-block.mx-auto.mb-4(src='/img/GNE_hollow.png' alt='' width='132' height='120')
+      h2 Registeration Form
+      p.lead
+        | Please complete this form to register for sports events. Kindly complete this form with utmost care and accuracy. Your information is crucial to us. Join us in embracing the world of sports at GNDEC with your registration.
+    .row.g-5
+      .col-md-7.col-lg-8.mx-auto
+        h4.mb-3 Personal Details
+        form#register-form(method='post')
+          .row.g-3
+            .col-12
+              label.form-label(for='name')
+                | Name 
+              input#name.form-control(type='text', name='name', placeholder='', required='')
+              .invalid-feedback
+                | Please enter a valid name
+            .col-sm-6
+              label.form-label(for='crn') CRN
+              input#crn.form-control(type='text', name='crn', placeholder='', value='', required='')
+              .invalid-feedback
+                | Valid CRN is required.
+            .col-sm-6
+              label.form-label(for='urn') URN
+              input#urn.form-control(type='text', name='urn', placeholder='', value='', required='')
+              .invalid-feedback
+                | Valid URN is required.
+            .col-12
+              label.form-label(for='email')
+                | College Email 
+              input#email.form-control(type='email', name='email', placeholder='example123@gndec.ac.in', required='')
+              .invalid-feedback
+                | Please enter a valid GNDEC email address
+            .col-md-5
+              label.form-label(for='branch') Branch
+              select#branch.form-select(name='branch', required='')
+                option(value='') Choose...
+                option Btech(CSE)
+                option Btech(IT)
+                option Btech(ECE)
+                option Btech(EE)
+                option Btech(CE)
+                option Btech(ME)
+                option BBA
+                option BCA
+                option BArch
+              .invalid-feedback
+                | Please select a valid branch
+            .col-md-4
+              label.form-label(for='year') Year
+              select#year.form-select(name='year', required='')
+                option(value='') Choose...
+                option 1
+                option 2
+                option 3
+                option 4
+              .invalid-feedback
+                | Please provide a valid year.
+            .col-md-3
+              label.form-label(for='section') Section
+              select#section.form-select(name='section', required='')
+                option(value='') Choose...
+                option A
+                option B
+                option C
+                option D
+              .invalid-feedback
+                | Section required.
+            .col-sm-6
+              label.form-label(for='password') Password
+              input#password.form-control(type='password', name='password', placeholder='', value='', required='')
+              .invalid-feedback
+                | Valid Password is required.
+            .col-sm-6
+              label.form-label(for='password-confrim') Confirm Password
+              input#password-confirm.form-control(type='password', name='password-confirm', placeholder='', value='', required='')
+              .invalid-feedback
+                | Passwords don't match.
+          .my-3
+            mixin checkboxOption(id, label)
+              .form-check
+                input.form-check-input(type='checkbox', name='sports', value=id, id=id)
+                label.form-check-label(for=id)= label
+            label(for='sports') Choose preferred sports:
+            +checkboxOption('badminton', 'Badminton')
+            +checkboxOption('basketball', 'Basketball')
+            +checkboxOption('chess', 'Chess')
+            +checkboxOption('cricket', 'Cricket')
+            +checkboxOption('cycling', 'Cycling')
+            +checkboxOption('football', 'Football')
+            +checkboxOption('hockey', 'Hockey')
+            +checkboxOption('kabaddi', 'Kabaddi')
+            +checkboxOption('lawn-tennis', 'Lawn Tennis')
+            +checkboxOption('swimming', 'Swimming')
+            +checkboxOption('volleyball', 'Volleyball')
+          hr.my-4
+          button.w-100.btn.btn-primary.btn-lg(type='submit') Register
 block footer
   script(src="/js/register.js")
