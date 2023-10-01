@@ -3,8 +3,8 @@ section.py-5.container
     .col.mr-auto
       h1.fw-light Events
 .album.py-5.bg-dark
-  .container
-    .swiper
+  .container.events-row
+    .swiper#swiper-container
       .swiper-wrapper
         mixin event_slide
           .swiper-slide
@@ -20,6 +20,6 @@ section.py-5.container
                   .list-group-item Venue: Football Ground
         - for (let i = 0; i < 10; i++)
           +event_slide
-      .swiper-pagination 
-      .swiper-button-prev
-      .swiper-button-next
+      .swiper-pagination#swiper-pagination
+      .swiper-button-prev#swiper-button-prev
+      .swiper-button-next#swiper-button-next

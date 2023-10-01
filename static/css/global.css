@@ -7,3 +7,26 @@
 .navbar-nav {
   margin-left: auto;
 }
+.events-row {
+  position: relative;
+}
+#swiper-container {
+  position: unset;
+  overflow: hidden;
+  z-index: 1;
+  margin: 0px 45px 20px 45px;
+}
+#swiper-pagination {
+  position: relative;
+  bottom: 0;
+}
+#swiper-pagination .swiper-pagination-bullet {
+  background-color: white;
+  opacity: 0.2;
+}
+#swiper-pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+#swiper-button-prev, #swiper-button-next {
+  color: white;
+}

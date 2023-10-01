@@ -108,4 +108,9 @@ router.post("/register", (req, res) => {
   })
 })
 
+
+router.get('/events', (req,res) => {
+  res.sendStatus(200)
+})
+
 module.exports = router
