@@ -4,9 +4,9 @@ function toggleNavbar() {
   $('.navbar').toggleClass('bg-transparent', !shouldAddClass);
 }
 
-$(document).ready(() => {
+toggleNavbar()
+$(window).scroll(() => {
   toggleNavbar()
-  $(window).scroll(() => {
-    toggleNavbar()
-  });
 });
+
+

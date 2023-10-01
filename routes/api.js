@@ -13,36 +13,99 @@ router.post("/login", (req,res) => {
       return res.status(500).json({ error: 'Database error.' });
     }
     if (row) {
-      return res.json({ message: 'Login successful.' });
+      req.session.user_id = row.id;
+      return res.status(200).json({ message: 'Login successful.' });
     } else {
       return res.status(401).json({ error: 'Invalid credentials.' });
     }
   });
 })
-router.post("/register", (req, res) => {
-  console.log(req.body);
 
-  db.run('INSERT INTO users (username, password) VALUES (?, ?)', [req.body.username, req.body.password], function (err) {
+router.post('/logout', (req,res) => {
+  if(!req.session.user_id){
+    return res.sendStatus(500)
+  } else {
+    delete req.session.user_id
+    return res.sendStatus(200)
+  }
+})
+
+router.post("/register", (req, res) => {
+  const {
+    name,
+    crn,
+    urn,
+    email,
+    branch,
+    year,
+    bio,
+    sports,
+    password,
+    passwordConfirm,
+  } = req.body;
+
+  if (!name || !crn || !urn || !email || !branch || !year || !bio || !password || !passwordConfirm) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  const username = crn;
+
+  const checkUsernameQuery = "SELECT id FROM users WHERE username = ?";
+  db.get(checkUsernameQuery, [username], (err, row) => {
     if (err) {
-      return res.status(500).json({ error: 'Error inserting user into the database.' });
+      console.error("Error checking username:", err.message);
+      return res.status(500).json({ error: "Failed to register user." })
     }
 
-    db.get('SELECT id FROM users WHERE username = ?', [req.body.username], (err, row) => {
+    if (row) {
+      return res.status(409).json({ error: "Username already in use." })
+    }
+
+    const insertUserQuery = `
+      INSERT INTO users (username, password) 
+      VALUES (?, ?)
+    `;
+    db.run(insertUserQuery, [username, password], function (err) {
       if (err) {
-        return res.status(501).json({ error: 'Error retrieving user ID.' });
+        console.error("Error inserting user:", err.message)
+        return res.status(500).json({ error: "Failed to register user." })
       }
 
-      const id = row.id;
-      db.run('INSERT INTO profiles (user_id, year, branch, name, urn, email) VALUES (?, ?, ?, ?, ?, ?)', [id, req.body.year, req.body.branch, req.body.name, req.body.urn, req.body.email], function (err) {
-        if (err) {
-          console.log(err)
-          return res.status(502).json({ error: 'Error inserting profile into the database.' });
-        }
+      const userId = this.lastID
 
-        return res.status(201).json({ message: 'User created successfully.' });
-      });
-    });
-  });
-});
+      const insertProfileQuery = `
+        INSERT INTO profiles (user_id, bio, year, branch, name, urn, email)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+      `;
+      db.run(
+        insertProfileQuery,
+        [userId, bio, year, branch, name, urn, email],
+        function (err) {
+          if (err) {
+            console.error("Error inserting profile:", err.message);
+            return res.status(500).json({ error: "Failed to register user." })
+          }
+
+          if (sports && sports.length > 0) {
+            const insertInterestQuery = `
+              INSERT INTO interests (interest, user_id)
+              VALUES (?, ?)
+            `;
+            sports.forEach((interest) => {
+              db.run(insertInterestQuery, [interest, userId], function (err) {
+                if (err) {
+                  console.error("Error inserting interest:", err.message)
+                  return res.status(500).json({ error: "Failed to register user." })
+                }
+              })
+            })
+          }
+
+          return res.sendStatus(200);
+        }
+      )
+    })
+  })
+})
 
 module.exports = router

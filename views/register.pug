@@ -77,28 +77,32 @@ block content
               .invalid-feedback
                 | Valid Password is required.
             .col-sm-6
-              label.form-label(for='password-confrim') Confirm Password
-              input#password-confirm.form-control(type='password', name='password-confirm', placeholder='', value='', required='')
+              label.form-label(for='passwordConfrim') Confirm Password
+              input#passwordConfirm.form-control(type='password', name='passwordConfirm', placeholder='', value='', required='')
               .invalid-feedback
                 | Passwords don't match.
-          .my-3
-            mixin checkboxOption(id, label)
-              .form-check
-                input.form-check-input(type='checkbox', name='sports', value=id, id=id)
-                label.form-check-label(for=id)= label
-            label(for='sports') Choose preferred sports:
-            +checkboxOption('badminton', 'Badminton')
-            +checkboxOption('basketball', 'Basketball')
-            +checkboxOption('chess', 'Chess')
-            +checkboxOption('cricket', 'Cricket')
-            +checkboxOption('cycling', 'Cycling')
-            +checkboxOption('football', 'Football')
-            +checkboxOption('hockey', 'Hockey')
-            +checkboxOption('kabaddi', 'Kabaddi')
-            +checkboxOption('lawn-tennis', 'Lawn Tennis')
-            +checkboxOption('swimming', 'Swimming')
-            +checkboxOption('volleyball', 'Volleyball')
-          hr.my-4
-          button.w-100.btn.btn-primary.btn-lg(type='submit') Register
+            .col-12
+              label.form-label(for='bio') Bio 
+                i.text-muted (optional)
+              textarea#bio.form-control(name='bio', rows='4', placeholder='Tell us about yourself...')
+            .my-3
+              mixin checkboxOption(id, label)
+                .form-check
+                  input.form-check-input(type='checkbox', name='sports', value=id, id=id)
+                  label.form-check-label(for=id)= label
+              label(for='sports') Choose preferred sports:
+              +checkboxOption('badminton', 'Badminton')
+              +checkboxOption('basketball', 'Basketball')
+              +checkboxOption('chess', 'Chess')
+              +checkboxOption('cricket', 'Cricket')
+              +checkboxOption('cycling', 'Cycling')
+              +checkboxOption('football', 'Football')
+              +checkboxOption('hockey', 'Hockey')
+              +checkboxOption('kabaddi', 'Kabaddi')
+              +checkboxOption('lawn-tennis', 'Lawn Tennis')
+              +checkboxOption('swimming', 'Swimming')
+              +checkboxOption('volleyball', 'Volleyball')
+            hr.my-4
+            button.w-100.btn.btn-primary.btn-lg(type='submit') Register
 block footer
   script(src="/js/register.js")

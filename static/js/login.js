@@ -1,30 +1,24 @@
-const loginForm = document.querySelector("#login-form")
+const loginForm = document.querySelector("#loginForm")
+const helptext = document.querySelector('#error-message')
 
 loginForm.addEventListener('submit', (e) => {
   e.preventDefault()
-  const formData = {};
-  const formElements = e.target.elements;
+  const data = new FormData(loginForm)
 
-  for (let i = 0; i < formElements.length; i++) {
-    const element = formElements[i];
-    if (element.tagName === 'INPUT') {
-      formData[element.name] = element.value;
-    }
-  }
+  console.log(data)
   fetch('/api/login', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: JSON.stringify(formData),
-  }).then(response => {
-      if (response.status === 200) {
-        window.location.href = '/';
-      } else {
-        console.error('Error:', response.statusText);
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    })
+    body: new URLSearchParams(data).toString(),
+  }).then(res => {
+    if(res.status == 200) {
+      window.location = '/'
+    } else if(res.status == 401) {
+      helptext.classList.remove('d-none');
+    }
+  }).catch(err => {
+    console.log(`Error sumitting form: ${err}`)
+  })
 })

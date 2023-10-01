@@ -25,7 +25,7 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
             a.dropdown-item(href='/sports/vollyball') Vollyball
         if session.user_id
           li.nav-item
-            a.nav-link(href='#') Logout
+            a.nav-link#logout(href='') Logout
         else
           li.nav-item
             a.nav-link(href='/login') Sign In
