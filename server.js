@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-const bodyParser = require("body-parser"); // Middleware for parsing request bodies
+const bodyParser = require("body-parser");
 
 const api = require("./routes/api");
 const sports = require("./routes/sports");

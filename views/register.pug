@@ -18,24 +18,20 @@ block content
               label.form-label(for='name')
                 | Name 
               input#name.form-control(type='text', name='name', placeholder='', required='')
-              .invalid-feedback
-                | Please enter a valid name
+              .invalid-feedback.d-block
             .col-sm-6
               label.form-label(for='crn') CRN
               input#crn.form-control(type='text', name='crn', placeholder='', value='', required='')
-              .invalid-feedback
-                | Valid CRN is required.
+              .invalid-feedback.d-block
             .col-sm-6
               label.form-label(for='urn') URN
               input#urn.form-control(type='text', name='urn', placeholder='', value='', required='')
-              .invalid-feedback
-                | Valid URN is required.
+              .invalid-feedback.d-block
             .col-12
               label.form-label(for='email')
                 | College Email 
               input#email.form-control(type='email', name='email', placeholder='example123@gndec.ac.in', required='')
-              .invalid-feedback
-                | Please enter a valid GNDEC email address
+              .invalid-feedback.d-block
             .col-md-5
               label.form-label(for='branch') Branch
               select#branch.form-select(name='branch', required='')
@@ -49,8 +45,7 @@ block content
                 option BBA
                 option BCA
                 option BArch
-              .invalid-feedback
-                | Please select a valid branch
+              .invalid-feedback.d-block
             .col-md-4
               label.form-label(for='year') Year
               select#year.form-select(name='year', required='')
@@ -59,8 +54,6 @@ block content
                 option 2
                 option 3
                 option 4
-              .invalid-feedback
-                | Please provide a valid year.
             .col-md-3
               label.form-label(for='section') Section
               select#section.form-select(name='section', required='')
@@ -69,18 +62,14 @@ block content
                 option B
                 option C
                 option D
-              .invalid-feedback
-                | Section required.
             .col-sm-6
               label.form-label(for='password') Password
               input#password.form-control(type='password', name='password', placeholder='', value='', required='')
-              .invalid-feedback
-                | Valid Password is required.
+              .invalid-feedback.d-block
             .col-sm-6
               label.form-label(for='passwordConfrim') Confirm Password
               input#passwordConfirm.form-control(type='password', name='passwordConfirm', placeholder='', value='', required='')
-              .invalid-feedback
-                | Passwords don't match.
+              .invalid-feedback.d-block
             .col-12
               label.form-label(for='bio') Bio 
                 i.text-muted (optional)
@@ -91,6 +80,7 @@ block content
                   input.form-check-input(type='checkbox', name='sports', value=id, id=id)
                   label.form-check-label(for=id)= label
               label(for='sports') Choose preferred sports:
+              .invalid-feedback.d-block#sports-error
               +checkboxOption('badminton', 'Badminton')
               +checkboxOption('basketball', 'Basketball')
               +checkboxOption('chess', 'Chess')
