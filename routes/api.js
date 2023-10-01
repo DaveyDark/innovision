@@ -150,8 +150,52 @@ router.get('/events/:sport', (req,res) => {
   })
 })
 
+function getProfile(id,callback) {
+  const query = `
+    SELECT
+      users.id AS user_id,
+      username,
+      password,
+      bio,
+      year,
+      branch,
+      name,
+      urn,
+      email,
+      GROUP_CONCAT(interest) AS interests
+    FROM
+      users
+    INNER JOIN
+      profiles ON users.id = profiles.user_id
+    LEFT JOIN
+      interests ON users.id = interests.user_id
+    WHERE
+      users.id = ?
+    GROUP BY
+      users.id`;
+  db.get(query, [id], (err, row) => {
+    if (err) {
+      console.log(`Error retrieving rows: ${err}`);
+      callback(err, null);
+    } else {
+      callback(null, row);
+    }
+  });
+}
+
+router.get('/profile/:id', (req,res) => {
+  getProfile(req.params.id,(err,row) => {
+    if(err) {
+      return res.sendStatus(500)
+    } else {
+      return res.status(200).json(row)
+    }
+  })
+})
+
 module.exports = {
   router,
   getEvents,
   getEventsFor,
+  getProfile,
 }

@@ -6,9 +6,9 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
       span.navbar-toggler-icon
     .collapse.navbar-collapse#navbarCont
       ul.navbar-nav.ml-auto
-        li.nav-item
+        li.nav-item.mx-3
           a.nav-link(href='/') Home
-        li.nav-item.dropdown
+        li.nav-item.dropdown.mx-3
           a#sportsDropdown.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
             | Sports
           .dropdown-menu(aria-labelledby='sportsDropdown')
@@ -24,8 +24,10 @@ nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
             a.dropdown-item(href='/sports/swimming') Swimming
             a.dropdown-item(href='/sports/vollyball') Vollyball
         if session.user_id
+          li.nav-item.mx-3
+            a.nav-link#profile(href=`/profile/${session.user_id}`) Profile
           li.nav-item
             a.nav-link#logout(href='') Logout
         else
-          li.nav-item
+          li.nav-item.mx-3
             a.nav-link(href='/login') Sign In

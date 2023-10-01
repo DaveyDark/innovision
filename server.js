@@ -36,5 +36,20 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
   res.render("register", {'session': req.session});
 });
+app.get('/profile/:id', (req,res) => {
+  api.getProfile(req.params.id,(err,row) => {
+    if(err) {
+      res.sendStatus(500)
+    } else {
+      if(row) 
+        res.render("profile", {'session': req.session, 'profile': row});
+      else
+        res.sendStatus(404)
+    }
+  })
+})
+app.get("/tmp", (req, res) => {
+  res.render("profile", {'session': req.session});
+});
 
 app.listen(5000);
