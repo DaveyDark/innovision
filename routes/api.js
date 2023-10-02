@@ -155,6 +155,35 @@ function getEventsFor(sport,callback) {
   });
 }
 
+function getEventByID(id,callback) {
+  db.get('SELECT * FROM events WHERE id=?', [id], (err, row) => {
+    if (err) {
+      console.log(`Error retrieving row: ${err}`);
+      callback(err, null);
+    } else {
+      callback(null, row);
+    }
+  });
+}
+
+function getEntriesFor(event_id, callback) {
+  const query = `
+    SELECT users.*, profiles.*
+    FROM entries
+    JOIN users ON entries.user_id = users.id
+    JOIN profiles ON users.id = profiles.user_id
+    WHERE entries.event_id = ?
+  `;
+
+  db.all(query, [event_id], (err, rows) => {
+    if (err) {
+      callback(err, null);
+      return;
+    }
+    callback(null, rows);
+  });
+}
+
 router.get('/events', (req,res) => {
   getEvents(10,(err,rows) => {
     if(err) {
@@ -251,5 +280,7 @@ module.exports = {
   router,
   getEvents,
   getEventsFor,
+  getEventByID,
+  getEntriesFor,
   getProfile,
 }

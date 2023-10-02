@@ -7,7 +7,7 @@ section.py-5.container
     .swiper#swiper-container
       .swiper-wrapper
         for event in events
-          .swiper-slide
+          .swiper-slide(onclick=`window.location = '/events/${event.id}'`)
             .card.shadow-sm.event-card
               .card-header= event.sport
               .card-body

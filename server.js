@@ -71,4 +71,21 @@ app.get("/admin/add-event", (req, res) => {
   }
 });
 
+app.get('/events/:id', (req,res) => {
+  api.getEventByID(req.params.id,(err,event) => {
+    if(err) {
+      res.sendStatus(500)
+    } else {
+      if(event) {
+        api.getEntriesFor(event.id, (e,entries) => {
+        if(e) {
+        } else {
+          res.render("event_details", {'session': req.session, 'event': event, 'entries': entries})
+        }
+      })}
+      else res.sendStatus(404)
+    }
+  })
+})
+
 app.listen(5000);

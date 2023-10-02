@@ -3,21 +3,43 @@ block head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Event Details
-  // Add Bootstrap CSS link
   link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  script(src="https://unpkg.com/feather-icons")
 block content
-  .container
+  .container.mt-5.p-4
     .row
-      .col-md-12
-        .text-center.mt-5
-          h1.display-4 Event Name
-          p.lead Sport: Sport Name
-          p.lead Level: Inter College
-          p.lead Time: 9:00 AM - 5:00 PM
-          p.lead Date: October 15, 2023
-          p.lead Description: Join us for an exciting sports event...
-          p.lead Venue: XYZ Sports Complex, 123 Main Street, City
+      .col-md-8.mt-4
+        h1.border-bottom Event Details
+        #icon-grid.container.px-4.py-5
+          h2 Chess Tournament
+          .row.row-cols-1.row-cols-lg-2.g-4.py-5
+            mixin detail-card(icon,name,val)
+              .col.d-flex.align-items-start
+                span.bi.text-muted.flex-shrink-0.me-3(width='2em' height='2em' data-feather=`${icon}`)
+                div
+                  h4.fw-bold.mb-0= name
+                  p= val
+            +detail-card('dribbble','Sport',event.sport)
+            +detail-card('bar-chart-2','Level',event.level)
+            +detail-card('calendar','Date',event.date)
+            +detail-card('clock','Time',event.time)
+            +detail-card('map-pin','Venue',event.venue)
+            +detail-card('credit-card','Entries',event.type)
+        h2 Description
+        p
+          = event.description
+      .col-md-4.mt-4
+        h2 Participants
+        ul.list-group.py-4
+          for entry in entries
+            li.list-group-item.d-flex.w-100.justify-content-between
+              div=entry.name
+              div=entry.username
+        .w-100.d-flex
+          button.ms-auto.btn.btn-primary
+            span.me-1(width="1.5em" height="1.5em" data-feather="plus")
+            | Register
+
 block footer
-  script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js')
-  script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js')
-  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js')
+  script
+    | feather.replace();
