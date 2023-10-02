@@ -15,6 +15,8 @@ loginForm.addEventListener('submit', (e) => {
   }).then(res => {
     if(res.status == 200) {
       window.location = '/'
+    } else if(res.status == 202) {
+      window.location = '/admin'
     } else if(res.status == 401) {
       helptext.classList.remove('d-none');
     }

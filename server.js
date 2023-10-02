@@ -48,8 +48,12 @@ app.get('/profile/:id', (req,res) => {
     }
   })
 })
-app.get("/tmp", (req, res) => {
-  res.render("profile", {'session': req.session});
+app.get("/admin", (req, res) => {
+  if(!req.session.user_id) {
+    res.redirect('/')
+  } else {
+    res.render("admin", {'session': req.session});
+  }
 });
 
 app.listen(5000);

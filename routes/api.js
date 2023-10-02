@@ -4,6 +4,17 @@ const sqlite3 = require('sqlite3')
 
 const db = new sqlite3.Database('innovision.db')
 
+function isAdmin(id,callback) {
+  db.all('SELECT * FROM admins WHERE user_id=?', [id], (err, row) => {
+    if (err) {
+      console.log(`Error retrieving rows: ${err}`);
+      callback(err, null);
+    } else {
+      callback(null, row);
+    }
+  });
+}
+
 router.post("/login", (req,res) => {
   if(!req.body.username || !req.body.password) {
     return res.sendStatus(400)
@@ -13,8 +24,19 @@ router.post("/login", (req,res) => {
       return res.status(500).json({ error: 'Database error.' });
     }
     if (row) {
-      req.session.user_id = row.id;
-      return res.status(200).json({ message: 'Login successful.' });
+      isAdmin(row.id,(err,r) => {
+        if(err) {
+          return res.sendStatus(500)
+        } else {
+          req.session.user_id = row.id;
+          if(r.length > 0){
+            req.session.admin = true;
+            return res.status(202).json({ message: 'Login successful.' });
+          } else {
+            return res.status(200).json({ message: 'Login successful.' });
+          }
+        }
+      })
     } else {
       return res.status(401).json({ error: 'Invalid credentials.' });
     }
@@ -22,12 +44,14 @@ router.post("/login", (req,res) => {
 })
 
 router.post('/logout', (req,res) => {
-  if(!req.session.user_id){
-    return res.sendStatus(500)
-  } else {
-    delete req.session.user_id
-    return res.sendStatus(200)
-  }
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Error destroying session:', err);
+      return res.sendStatus(500)
+    } else {
+      return res.sendStatus(200)
+    }
+  });
 })
 
 router.post("/register", (req, res) => {
@@ -38,14 +62,14 @@ router.post("/register", (req, res) => {
     email,
     branch,
     year,
+    gender,
     bio,
     sports,
     password,
     passwordConfirm,
-    gender,
   } = req.body;
 
-  if (!name || !crn || !urn || !email || !gender || !branch || !year || !bio || !password || !passwordConfirm) {
+  if (!name || !crn || !urn || !email || !gender || !branch || !year || !password || !passwordConfirm) {
     return res.status(400).json({ error: "All fields are required." });
   }
 
