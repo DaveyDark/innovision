@@ -165,6 +165,34 @@ router.get('/events', (req,res) => {
   })
 })
 
+router.post('/events/add', (req,res) => {
+  const {
+    name,
+    sport,
+    level,
+    type,
+    date,
+    time,
+    venue,
+    description,
+  } = req.body;
+
+  if (!name || !sport || !level || !type || !date || !time || !venue || !description) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  const insertQuery = "INSERT INTO events (name,sport,level,type,date,time,venue,description) VALUES (?,?,?,?,?,?,?,?)";
+
+  db.run(insertQuery, [name,sport,level,type,date,time,venue,description], (err) => {
+    if(err) {
+      console.log(`Error adding event: ${err}`)
+      return res.sendStatus(500)
+    } else {
+      return res.sendStatus(200)
+    }
+  })
+})
+
 router.get('/events/:sport', (req,res) => {
   getEventsFor(req.params.sport,(err,rows) => {
     if(err) {

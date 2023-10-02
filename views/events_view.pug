@@ -6,20 +6,16 @@ section.py-5.container
   .container.events-row
     .swiper#swiper-container
       .swiper-wrapper
-        mixin event_slide(event)
+        for event in events
           .swiper-slide
             .card.shadow-sm.event-card
               .card-header= event.sport
               .card-body
                 .card-title= event.name
-                .card-text
-                  =event.description
                 .list-group.list-group-flush
                   .list-group-item Date: #{event.date}
                   .list-group-item Time: #{event.time}
                   .list-group-item Venue: #{event.venue}
-        for event in events
-          +event_slide(event)
       .swiper-pagination#swiper-pagination
       .swiper-button-prev#swiper-button-prev
       .swiper-button-next#swiper-button-next

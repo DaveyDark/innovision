@@ -11,9 +11,10 @@ html
     link(rel='stylesheet' href='/css/admin.css')
   body
     header.navbar.navbar-dark.sticky-top.bg-dark.flex-md-nowrap.p-0.shadow
-      a.navbar-brand.col-md-3.col-lg-2.me-0.px-3(href='#') GNDEC Sports
+      a.navbar-brand.col-md-3.col-lg-2.me-0.px-3(href='/') GNDEC Sports
       button.navbar-toggler.position-absolute.d-md-none.collapsed(type='button' data-bs-toggle='collapse' data-bs-target='#sidebarMenu' aria-controls='sidebarMenu' aria-expanded='false' aria-label='Toggle navigation')
         span.navbar-toggler-icon
+      input.form-control.form-control-dark.w-100(type="text" placeholder="" readonly="" disabled="" aria-label="Search" style="background-color: #212529;")
       .navbar-nav
         .nav-item.text-nowrap
           a.nav-link.px-3#logout(href='#') Logout
@@ -36,3 +37,4 @@ html
     script
       | feather.replace();
     script(src="/js/logout.js")
+    block footer

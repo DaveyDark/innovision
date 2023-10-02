@@ -3,4 +3,62 @@ extends admin_base.pug
 block view
   .d-flex.justify-content-between.flex-wrap.flex-md-nowrap.align-items-center.pt-3.pb-2.mb-3.border-bottom
     h1.fs-1 Events
-  h2.fs-3 Add Event
+  form#add-event-form.p-4.mx-auto.container
+    h2.fs-3 Add Event
+    .row.g-2
+      .col-12
+        label.form-label(for='name')
+          | Event Name 
+        input#name.form-control(type='text', name='name', placeholder='', required='')
+        .invalid-feedback.d-block
+      .col-md-4
+        label.form-label(for='sport') Sport
+        select#sport.form-select(name='sport', required='')
+          option(value='') Choose...
+          option Basketball
+          option Badminton
+          option Cricket
+          option Chess
+          option Cycling
+          option Football
+          option Hockey
+          option Kabaddi
+          option Lawn Tennis
+          option Swimming
+          option Vollyball
+        .invalid-feedback.d-block
+      .col-md-4
+        label.form-label(for='level') Level
+        select#level.form-select(name='level', required='')
+          option(value='') Choose...
+          option Casual
+          option College
+          option Inter-College
+          option Inter-University
+          option State
+      .col-md-4
+        label.form-label(for='type') Entries
+        select#level.form-select(name='type', required='')
+          option(value='') Choose...
+          option Open
+          option Restricted
+      .col-md-4
+        label.form-label(for='date') Date
+        input#date.form-control(type='date', name='date', placeholder='', value='', required='')
+        .invalid-feedback.d-block
+      .col-md-4
+        label.form-label(for='time') Time
+        input#time.form-control(type='time', name='time', placeholder='', value='', required='')
+        .invalid-feedback.d-block
+      .col-md-4
+        label.form-label(for='venue') Venue 
+        input#name.form-control(type='text', name='venue', placeholder='', required='')
+        .invalid-feedback.d-block
+      .col-12
+        label.form-label(for='description') Description 
+        textarea#description.form-control(name='description', rows='5', placeholder='Details about the event...', style="resize: none", required="")
+      .col-lg-2.ms-auto
+        button.w-100.btn.btn-primary(type='submit') Add Event
+
+block footer
+  script(src="/js/add_event.js")
