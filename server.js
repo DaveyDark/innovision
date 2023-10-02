@@ -48,6 +48,7 @@ app.get('/profile/:id', (req,res) => {
     }
   })
 })
+
 app.get("/admin", (req, res) => {
   if(!req.session.admin) {
     res.redirect('/')
@@ -59,6 +60,14 @@ app.get("/admin", (req, res) => {
         res.render("admin", {'session': req.session, 'events': rows});
       }
     })
+  }
+});
+
+app.get("/admin/add-event", (req, res) => {
+  if(!req.session.admin) {
+    res.redirect('/')
+  } else {
+    res.render("admin_new_event", {'session': req.session});
   }
 });
 
