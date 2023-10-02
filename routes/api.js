@@ -133,8 +133,8 @@ router.post("/register", (req, res) => {
   })
 })
 
-function getEvents(callback) {
-  db.all('SELECT * FROM events LIMIT 10', (err, rows) => {
+function getEvents(limit, callback) {
+  db.all('SELECT * FROM events LIMIT ?', [limit], (err, rows) => {
     if (err) {
       console.log(`Error retrieving rows: ${err}`);
       callback(err, null);
@@ -156,7 +156,7 @@ function getEventsFor(sport,callback) {
 }
 
 router.get('/events', (req,res) => {
-  getEvents((err,rows) => {
+  getEvents(10,(err,rows) => {
     if(err) {
       return res.sendStatus(500)
     } else {

@@ -22,7 +22,7 @@ app.use("/sports", sports);
 app.use("/api", api.router);
 
 app.get("/", (req, res) => {
-  api.getEvents((err,rows) => {
+  api.getEvents(10,(err,rows) => {
     if(err) {
       res.render("index", {'session': req.session, 'events': {}});
     } else {
@@ -49,10 +49,16 @@ app.get('/profile/:id', (req,res) => {
   })
 })
 app.get("/admin", (req, res) => {
-  if(!req.session.user_id) {
+  if(!req.session.admin) {
     res.redirect('/')
   } else {
-    res.render("admin", {'session': req.session});
+    api.getEvents(99999,(err,rows) => {
+      if(err) {
+        res.render("admin", {'session': req.session, 'events': {}});
+      } else {
+        res.render("admin", {'session': req.session, 'events': rows});
+      }
+    })
   }
 });
 
