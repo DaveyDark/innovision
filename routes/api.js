@@ -248,6 +248,22 @@ router.post('/events/register', (req,res) => {
   }
 })
 
+router.post('/events/unregister', (req,res) => {
+  if(!req.body.event_id || !req.session.user_id) {
+    return res.sendStatus(400)
+  } else {
+    const delQuery = `DELETE FROM entries WHERE event_id=? AND user_id=?`;
+    db.run(delQuery, [req.body.event_id, req.session.user_id], err => {
+      if(err) {
+        console.log(`Error deleting entry: ${err}`)
+        res.sendStatus(500)
+      } else {
+        res.sendStatus(200)
+      }
+    })
+  }
+})
+
 function getProfile(id,callback) {
   const query = `
     SELECT

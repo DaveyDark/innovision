@@ -28,17 +28,24 @@ block content
         h2 Description
         p
           = event.description
-      .col-md-4.mt-4
-        h2 Participants
-        ul.list-group.py-4
-          for entry in entries
-            li.list-group-item.d-flex.w-100.justify-content-between
-              div=entry.name
-              div=entry.username
-        .w-100.d-flex
-          button.ms-auto.btn.btn-primary#register
-            span.me-1(width="1.5em" height="1.5em" data-feather="plus")
-            | Register
+      if event.type == 'Open'
+        .col-md-4.mt-4
+          h2 Participants
+          ul.list-group.py-4
+            for entry in entries
+              li.list-group-item.d-flex.w-100.justify-content-between
+                div=entry.name
+                div=entry.username
+          if session.user_id
+            .w-100.d-flex
+              if entries.some(entry => entry.user_id === session.user_id)
+                button.ms-auto.btn.btn-danger#unregister
+                  span.me-1(width="1.5em" height="1.5em" data-feather="minus")
+                  | Unregister
+              else
+                button.ms-auto.btn.btn-primary#register
+                  span.me-1(width="1.5em" height="1.5em" data-feather="plus")
+                  | Register
 
 block footer
   script
