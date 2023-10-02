@@ -1,71 +1,72 @@
 extends base.pug
 
 block content
-  section.container.bg-dark.p-5.rounded(style='margin-top: 10vh;')
-    .row
-      .col-lg-4
-        .card.mb-4
-          .card-body.text-center
-            if profile.gender == 'M'
-              img.rounded-circle.img-fluid(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp' alt='avatar' style='width: 150px;')
-            else
-              img.rounded-circle.img-fluid(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4.webp' alt='avatar' style='width: 150px;')
-            h5.my-3=profile.name
-            p.text-muted.mb-1=profile.bio
-        .card.mb-4.mb-lg-0
-          .card-body.p-0
-            ul.list-group.list-group-flush.rounded-3.text-capitalize
-              for sport in profile.interests.split(',')
-                li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
-                  i.fas.fa-globe.fa-lg.text-warning
-                  p.mb-0= sport
-      .col-lg-8
-        .card.mb-4
-          .card-body
-            .row
-              .col-sm-3
-                p.mb-0 Branch
-              .col-sm-9
-                p.text-muted.mb-0=profile.branch
-            hr
-            .row
-              .col-sm-3
-                p.mb-0 Year
-              .col-sm-9
-                p.text-muted.mb-0=profile.year
-            hr
-            .row
-              .col-sm-3
-                p.mb-0 URN
-              .col-sm-9
-                p.text-muted.mb-0=profile.urn
-            hr
-            .row
-              .col-sm-3
-                p.mb-0 CRN
-              .col-sm-9
-                p.text-muted.mb-0=profile.username
-            hr
-            .row
-              .col-sm-3
-                p.mb-0 Email
-              .col-sm-9
-                p.text-muted.mb-0=profile.email
-        .row
-          .col-md-6
-            .card.mb-4.mb-md-0
-              .card-body
-                p.mb-4
-                  span.text-primary.font-italic.me-1.fs-4 Events
-                  .text-muted Upcoming/Ongoing
-                hr
-                p.card.p-3.mb-1 Chess Tournament
-          .col-md-6
-            .card.mb-4.mb-md-0
-              .card-body
-                p.mb-4
-                  span.text-primary.font-italic.me-1.fs-4 Events
-                  .text-muted Past
-                hr
-                p.card.p-3.mb-1 Football Tournament
-                p.card.p-3.mb-1 Cycling Race
+  section.container-fluid.bg-dark.p-5.rounded(style='margin-top: 10vh;')
+    .container
+      .row
+        .col-lg-4
+          .card.mb-4
+            .card-body.text-center
+              if profile.gender == 'M'
+                img.rounded-circle.img-fluid(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp' alt='avatar' style='width: 150px;')
+              else
+                img.rounded-circle.img-fluid(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4.webp' alt='avatar' style='width: 150px;')
+              h5.my-3=profile.name
+              p.text-muted.mb-1=profile.bio
+          .card.mb-4.mb-lg-0
+            .card-body.p-0
+              ul.list-group.list-group-flush.rounded-3.text-capitalize
+                for sport in profile.interests.split(',')
+                  li.list-group-item.d-flex.justify-content-between.align-items-center.p-3
+                    i.fas.fa-globe.fa-lg.text-warning
+                    p.mb-0= sport
+        .col-lg-8
+          .card.mb-4
+            .card-body
+              .row
+                .col-sm-3
+                  p.mb-0 Branch
+                .col-sm-9
+                  p.text-muted.mb-0=profile.branch
+              hr
+              .row
+                .col-sm-3
+                  p.mb-0 Year
+                .col-sm-9
+                  p.text-muted.mb-0=profile.year
+              hr
+              .row
+                .col-sm-3
+                  p.mb-0 URN
+                .col-sm-9
+                  p.text-muted.mb-0=profile.urn
+              hr
+              .row
+                .col-sm-3
+                  p.mb-0 CRN
+                .col-sm-9
+                  p.text-muted.mb-0=profile.username
+              hr
+              .row
+                .col-sm-3
+                  p.mb-0 Email
+                .col-sm-9
+                  p.text-muted.mb-0=profile.email
+          .row
+            .col-md-6
+              .card.mb-4.mb-md-0
+                .card-body
+                  p.mb-4
+                    span.text-primary.font-italic.me-1.fs-4 Events
+                    .text-muted Upcoming/Ongoing
+                  hr
+                  p.card.p-3.mb-1 Chess Tournament
+            .col-md-6
+              .card.mb-4.mb-md-0
+                .card-body
+                  p.mb-4
+                    span.text-primary.font-italic.me-1.fs-4 Events
+                    .text-muted Past
+                  hr
+                  p.card.p-3.mb-1 Football Tournament
+                  p.card.p-3.mb-1 Cycling Race
