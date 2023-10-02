@@ -264,6 +264,18 @@ router.post('/events/unregister', (req,res) => {
   }
 })
 
+router.post('/events/delete', (req,res) => {
+  const delQuery = `DELETE FROM events WHERE id=?`;
+  db.run(delQuery, [req.body.event_id], err => {
+    if(err) {
+      console.log(`Error deleting entry: ${err}`)
+      res.sendStatus(500)
+    } else {
+      res.sendStatus(200)
+    }
+  })
+})
+
 function getProfile(id,callback) {
   const query = `
     SELECT

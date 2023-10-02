@@ -16,10 +16,12 @@ block view
           th(scope='col') Venue
       tbody
         for event in events
-          tr
-            td= event.id
-            td= event.sport
+          tr.admin-event-row
+            td(onclick=`window.location = '/events/${event.id}'`)= event.id
+            td(onclick=`window.location = '/events/${event.id}'`)= event.sport
             td= event.name
             td= event.date
             td= event.time
             td= event.venue
+            td
+              button.btn.btn-danger.delete-button(val=`${event.id}`) Delete
