@@ -310,6 +310,23 @@ function getProfile(id,callback) {
   });
 }
 
+function getEventsForUser(user_id, callback) {
+  const query = `
+    SELECT events.*
+    FROM entries
+    JOIN events ON entries.event_id = events.id
+    WHERE entries.user_id = ?
+  `;
+
+  db.all(query, [user_id], (err, rows) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      callback(null, rows);
+    }
+  });
+}
+
 router.get('/profile/:id', (req,res) => {
   getProfile(req.params.id,(err,row) => {
     if(err) {
@@ -325,6 +342,7 @@ module.exports = {
   getEvents,
   getEventsFor,
   getEventByID,
+  getEventsForUser,
   getEntriesFor,
   getProfile,
 }

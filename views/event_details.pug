@@ -11,7 +11,7 @@ block content
       .col-md-8.mt-4
         h1.border-bottom Event Details
         #icon-grid.container.px-4.py-5
-          h2 Chess Tournament
+          h2= event.name
           .row.row-cols-1.row-cols-lg-2.g-4.py-5
             mixin detail-card(icon,name,val)
               .col.d-flex.align-items-start

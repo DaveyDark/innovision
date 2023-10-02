@@ -58,15 +58,7 @@ block content
                 .card-body
                   p.mb-4
                     span.text-primary.font-italic.me-1.fs-4 Events
-                    .text-muted Upcoming/Ongoing
+                    .text-muted Registered
                   hr
-                  p.card.p-3.mb-1 Chess Tournament
-            .col-md-6
-              .card.mb-4.mb-md-0
-                .card-body
-                  p.mb-4
-                    span.text-primary.font-italic.me-1.fs-4 Events
-                    .text-muted Past
-                  hr
-                  p.card.p-3.mb-1 Football Tournament
-                  p.card.p-3.mb-1 Cycling Race
+                  for event in events
+                    p.card.p-3.mb-1(onclick=`window.location = '/events/${event.id}`)= event.name

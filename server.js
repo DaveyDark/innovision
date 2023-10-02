@@ -42,7 +42,13 @@ app.get('/profile/:id', (req,res) => {
       res.sendStatus(500)
     } else {
       if(row) 
-        res.render("profile", {'session': req.session, 'profile': row});
+        api.getEventsForUser(req.params.id, (error, events) => {
+        if(error) {
+          res.sendStatus(500)
+        } else {
+          res.render("profile", {'session': req.session, 'profile': row, 'events': events});
+        }
+      })
       else
         res.sendStatus(404)
     }
