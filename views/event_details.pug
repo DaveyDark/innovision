@@ -33,7 +33,7 @@ block content
           h2 Participants
           ul.list-group.py-4
             for entry in entries
-              li.list-group-item.d-flex.w-100.justify-content-between
+              li.list-group-item.d-flex.w-100.justify-content-between(onclick=`window.location = '/profile/${entry.user_id}'`)
                 div=entry.name
                 div=entry.username
           if session.user_id
