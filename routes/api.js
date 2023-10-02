@@ -232,6 +232,22 @@ router.get('/events/:sport', (req,res) => {
   })
 })
 
+router.post('/events/register', (req,res) => {
+  if(!req.body.event_id || !req.session.user_id) {
+    return res.sendStatus(400)
+  } else {
+    const insertQuery = `INSERT INTO entries (event_id, user_id) VALUES (?,?)`;
+    db.run(insertQuery, [req.body.event_id, req.session.user_id], err => {
+      if(err) {
+        console.log(`Error inserting entry: ${err}`)
+        res.sendStatus(500)
+      } else {
+        res.sendStatus(200)
+      }
+    })
+  }
+})
+
 function getProfile(id,callback) {
   const query = `
     SELECT

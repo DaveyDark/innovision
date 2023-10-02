@@ -36,10 +36,11 @@ block content
               div=entry.name
               div=entry.username
         .w-100.d-flex
-          button.ms-auto.btn.btn-primary
+          button.ms-auto.btn.btn-primary#register
             span.me-1(width="1.5em" height="1.5em" data-feather="plus")
             | Register
 
 block footer
   script
     | feather.replace();
+  script(src="/js/event_details.js")
