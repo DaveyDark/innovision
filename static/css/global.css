@@ -30,3 +30,30 @@
 #swiper-button-prev, #swiper-button-next {
   color: white;
 }
+.event-card {
+  transition: transform 0.2s ease-in-out;
+}
+.event-card:hover {
+  transform: scale(0.98);
+}
+.nav-item {
+  position: relative;
+}
+.nav-link:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.2s ease-in-out, left 0.2s ease-in-out;
+}
+.nav-link:hover::before {
+  left: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  cursor: pointer;
+}

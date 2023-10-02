@@ -6,7 +6,10 @@ block content
       .col-lg-4
         .card.mb-4
           .card-body.text-center
-            img.rounded-circle.img-fluid(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp' alt='avatar' style='width: 150px;')
+            if profile.gender == 'M'
+              img.rounded-circle.img-fluid(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp' alt='avatar' style='width: 150px;')
+            else
+              img.rounded-circle.img-fluid(src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava4.webp' alt='avatar' style='width: 150px;')
             h5.my-3=profile.name
             p.text-muted.mb-1=profile.bio
         .card.mb-4.mb-lg-0

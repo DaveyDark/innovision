@@ -34,7 +34,7 @@ block content
       .row.row-cols-1.row-cols-sm-2.row-cols-md-3.g-3
         mixin sport-card(url,img,title)
           .col
-            .card(onclick=`window.location = '/sports/${url}'`)
+            .card.sport-card(onclick=`window.location = '/sports/${url}'`)
               img.card-img-top(src=`/img/${img}`)
               .card-text-overlay= title
         +sport-card('chess','chess-playing-hand.jpeg', 'Chess')

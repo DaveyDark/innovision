@@ -60,6 +60,11 @@ body {
 .card {
   position: relative;
   cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.sport-card:hover {
+  transform: scale(1.025);
 }
 
 .card img {

@@ -42,9 +42,10 @@ router.post("/register", (req, res) => {
     sports,
     password,
     passwordConfirm,
+    gender,
   } = req.body;
 
-  if (!name || !crn || !urn || !email || !branch || !year || !bio || !password || !passwordConfirm) {
+  if (!name || !crn || !urn || !email || !gender || !branch || !year || !bio || !password || !passwordConfirm) {
     return res.status(400).json({ error: "All fields are required." });
   }
 
@@ -74,12 +75,12 @@ router.post("/register", (req, res) => {
       const userId = this.lastID
 
       const insertProfileQuery = `
-        INSERT INTO profiles (user_id, bio, year, branch, name, urn, email)
-        VALUES (?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO profiles (user_id, bio, year, branch, name, urn, email, gender)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
       `;
       db.run(
         insertProfileQuery,
-        [userId, bio, year, branch, name, urn, email],
+        [userId, bio, year, branch, name, urn, email, gender],
         function (err) {
           if (err) {
             console.error("Error inserting profile:", err.message);
@@ -162,6 +163,7 @@ function getProfile(id,callback) {
       name,
       urn,
       email,
+      gender,
       GROUP_CONCAT(interest) AS interests
     FROM
       users
